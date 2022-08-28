@@ -1,5 +1,7 @@
 package IETI.Lab1User.entities;
 
+import java.time.LocalDate;
+
 public class User{
     private String id;
     private String name;
@@ -8,20 +10,17 @@ public class User{
     private String createdAt;
 
     public User(String id, String name, String email, String lastName, String createdAt){
-        this.id = id;
+        this.id = String.valueOf((int)(Math.random()*9));;
         this.name = name;
         this.email = email;
         this.lastName = lastName;
-        this.createdAt = createdAt;
+        this.createdAt = LocalDate.now().toString();
     }
 
     public String getid() {
         return id;
     }
 
-    public void setid(String name) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -47,9 +46,6 @@ public class User{
         this.lastName = lastName;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
 
     public String getCreatedAt(){
         return createdAt;

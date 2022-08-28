@@ -1,5 +1,7 @@
 package IETI.Lab1User.dto;
 
+import java.time.LocalDate;
+
 public class UserDto {
     private String id;
     private String name;
@@ -7,21 +9,18 @@ public class UserDto {
     private String lastName;
     private String createdAt;
 
-    public UserDto(String id, String name, String email, String lastName, String createdAt){
-        this.id = id;
+    public UserDto(String name, String email, String lastName){
+        this.id = String.valueOf((int)(Math.random()*9));;
         this.name = name;
         this.email = email;
         this.lastName = lastName;
-        this.createdAt = createdAt;
+        this.createdAt = LocalDate.now().toString();
     }
 
     public String getid() {
         return id;
     }
 
-    public void setid(String name) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -47,9 +46,6 @@ public class UserDto {
         this.lastName = lastName;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
 
     public String getCreatedAt(){
         return createdAt;

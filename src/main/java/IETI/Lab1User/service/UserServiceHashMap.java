@@ -2,6 +2,8 @@ package IETI.Lab1User.service;
 
 import IETI.Lab1User.entities.User;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -13,26 +15,37 @@ public class UserServiceHashMap implements UserService{
 
     @Override
     public User create(User user) {
-        return null;
+        users.putIfAbsent(user.getid(), user);
+        return user;
     }
 
     @Override
     public User findById(String id) {
-        return null;
+        try{
+            return users.get(id);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
     public List<User> getAll() {
-        return null;
+        List<User> usuarios = new ArrayList<>();
+        for (String id : users.keySet()){
+            usuarios.add(users.get(id));
+        }
+        return usuarios;
     }
 
     @Override
     public void deleteById(String id) {
-
+        users.remove(id);
     }
 
     @Override
     public User update(User user, String userId) {
-        return null;
+        return users.put(userId, user);
     }
 }
