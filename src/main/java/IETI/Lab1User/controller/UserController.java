@@ -53,7 +53,7 @@ public class UserController {
     public ResponseEntity<UserDto> create(@RequestBody UserDto userDto ) {
         try {
             userService.create(mapeo.map(userDto, User.class));
-            return new ResponseEntity<>(null, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(userDto, HttpStatus.ACCEPTED);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
@@ -64,7 +64,7 @@ public class UserController {
     public ResponseEntity<UserDto> update( @RequestBody UserDto user, @PathVariable String id ) {
         try {
             userService.update(mapeo.map(user, User.class), id);
-            return new ResponseEntity<>(null, HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(user, HttpStatus.ACCEPTED);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
