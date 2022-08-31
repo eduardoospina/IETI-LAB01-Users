@@ -9,16 +9,31 @@ public class UserDto {
     private String lastName;
     private String createdAt;
 
+    public UserDto(){
+        this.id = String.valueOf((int)(Math.random()*9));
+        this.createdAt = LocalDate.now().toString();
+
+    }
+
     public UserDto(String name, String email, String lastName){
-        this.id = String.valueOf((int)(Math.random()*9));;
+        this();
         this.name = name;
         this.email = email;
         this.lastName = lastName;
-        this.createdAt = LocalDate.now().toString();
     }
 
-    public String getid() {
+    public UserDto(String id,String name, String email, String lastName, String createdAt){
+        this(name, email, lastName);
+        this.id = id;
+        this.createdAt = createdAt;
+    }
+
+    public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
 
@@ -47,7 +62,11 @@ public class UserDto {
     }
 
 
-    public String getCreatedAt(){
+    public String getCreatedAt() {
         return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 }

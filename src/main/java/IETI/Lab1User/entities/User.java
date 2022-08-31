@@ -9,16 +9,31 @@ public class User{
     private String lastName;
     private String createdAt;
 
-    public User(String id, String name, String email, String lastName, String createdAt){
-        this.id = String.valueOf((int)(Math.random()*9));;
+    public User(){
+        this.id = String.valueOf((int)(Math.random()*9));
+        this.createdAt = LocalDate.now().toString();
+
+    }
+
+    public User(String name, String email, String lastName){
+        this();
         this.name = name;
         this.email = email;
         this.lastName = lastName;
-        this.createdAt = LocalDate.now().toString();
     }
 
-    public String getid() {
+    public User(String id,String name, String email, String lastName, String createdAt){
+        this(name, email, lastName);
+        this.id = id;
+        this.createdAt = createdAt;
+    }
+
+    public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
 
@@ -47,7 +62,11 @@ public class User{
     }
 
 
-    public String getCreatedAt(){
+    public String getCreatedAt() {
         return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 }

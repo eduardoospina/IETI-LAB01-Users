@@ -15,7 +15,7 @@ public class UserServiceHashMap implements UserService{
 
     @Override
     public User create(User user) {
-        users.putIfAbsent(user.getid(), user);
+        users.putIfAbsent(user.getId(), user);
         return user;
     }
 
