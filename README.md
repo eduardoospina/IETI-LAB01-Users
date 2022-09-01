@@ -11,9 +11,9 @@
 En esta seccion se daran intrucciones de como descargar y correr localmente la API REST de users:
 
 ##### Requisitos:
-1)   [Java 8](https://www.java.com/download/ie_manual.jsp) 
+1)   [Java 11](https://www.java.com/download/ie_manual.jsp) 
 2)   [Git](https://git-scm.com/downloads) 
-3)   IDE de java.
+3)   IDE de java. (intellij o visual studio code)
 
 ##### Despliegue local API
 
@@ -101,22 +101,32 @@ para esto se siguen los siguientes pasos:
 ### Insomnia: 
 
 
+##### getall()
 ![](https://i.postimg.cc/tRm565r1/insomian-user-1.png)
 
+##### create()
 ![](https://i.postimg.cc/WbF7wkK5/insomian-user-2.png)
 
+##### create()
 ![](https://i.postimg.cc/Sxc7wpm8/insomian-user-3.png)
 
+##### getall()
 ![](https://i.postimg.cc/43ZbGF30/insomian-user-4.png)
 
+##### findbyid()
 ![](https://i.postimg.cc/d1V2kkrm/insomian-user-5.png)
 
+##### update()
 ![](https://i.postimg.cc/tTvhhqz0/insomian-user-6.png)
 
+
+##### getall()
 ![](https://i.postimg.cc/QCBcm26F/insomian-user-7.png)
 
+##### delete()
 ![](https://i.postimg.cc/gjf8Tg5N/insomian-user-8.png)
 
+##### getall()
 ![](https://i.postimg.cc/fWFcybLm/insomian-user-9.png)
 
 
